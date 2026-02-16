@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bizi Ne Kadar Tanıyorsun?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #0f0c29;
+        color: white;
+      }
+      .millionaire-gradient {
+        background: radial-gradient(circle at center, #240b36 0%, #0f0c29 100%);
+      }
+      .option-box {
+        background: linear-gradient(90deg, #000000 0%, #203a43 50%, #000000 100%);
+        border: 2px solid #8f94fb;
+      }
+      .option-box:hover {
+        background: linear-gradient(90deg, #2c3e50 0%, #4ca1af 50%, #2c3e50 100%);
+        cursor: pointer;
+      }
+      .option-box.selected {
+        background: linear-gradient(90deg, #ff9966 0%, #ff5e62 50%, #ff9966 100%);
+        border-color: #ffaa00;
+      }
+      .option-box.correct {
+        background: linear-gradient(90deg, #11998e 0%, #38ef7d 50%, #11998e 100%);
+        border-color: #00ff00;
+      }
+      .option-box.wrong {
+        background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 50%, #cb2d3e 100%);
+        border-color: #ff0000;
+      }
+      .lifeline-used {
+        opacity: 0.3;
+        cursor: not-allowed;
+        position: relative;
+      }
+      .lifeline-used::after {
+        content: '\274C';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1"
+  }
+}
+</script>
+</head>
+  <body class="millionaire-gradient h-screen overflow-hidden">
+    <div id="root" class="h-full"></div>
+    <!-- 
+      This script tag is the entry point for the Vite application. 
+      It points to the React entry file (index.tsx) which mounts the App component.
+      Without this, the React app will not initialize, and the page will remain blank.
+    -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
