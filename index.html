@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bizi Ne Kadar Tanıyorsun?</title>
+    
+    <!-- External CSS Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <style>
       body {
         font-family: 'Roboto', sans-serif;
@@ -50,26 +53,29 @@
         font-size: 2rem;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
-    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4",
-    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
-    "jspdf": "https://esm.sh/jspdf@^2.5.1"
-  }
-}
-</script>
-</head>
+    
+    <!-- Import Map: Ensures browser knows where to find React modules if not fully bundled -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+        "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4",
+        "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+        "jspdf": "https://esm.sh/jspdf@^2.5.1"
+      }
+    }
+    </script>
+  </head>
   <body class="millionaire-gradient h-screen overflow-hidden">
     <div id="root" class="h-full"></div>
+    
     <!-- 
-      This script tag is the entry point for the Vite application. 
-      It points to the React entry file (index.tsx) which mounts the App component.
-      Without this, the React app will not initialize, and the page will remain blank.
+      VITE ENTRY POINT: This is the critical line.
+      It tells Vite (and the browser) to load the React application code.
+      Without this line, the #root div stays empty.
     -->
     <script type="module" src="/index.tsx"></script>
   </body>
